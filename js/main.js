@@ -45,7 +45,7 @@ $(".next").click(function () {
     $yourphone.html($phone);
   } else {
     console.log("fail");
-    alert("fail");
+    alert("Please insert a valid phone number or verify your age");
   }
 });
 

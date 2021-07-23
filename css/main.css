@@ -64,7 +64,11 @@ body {
   outline: none;
   border: 2px solid #276fbf;
 }
-#multistepsform .action-button {
+#multistepsform .action-button,
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
   width: 100px;
   background: #276fbf;
   font-weight: bold;
