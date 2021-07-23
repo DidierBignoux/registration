@@ -283,7 +283,7 @@ button:active,
 }
 
 .slider-form h2 {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   margin-bottom: 50px;
@@ -293,16 +293,22 @@ button:active,
 
 .slider-form h2 .yourname {
   font-weight: 400;
+  font-size: 2.5rem;
 }
 
 .slider-form h3 {
   font-size: 1.5rem;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
-  margin-bottom: 50px;
+  margin-bottom: 15px;
   line-height: 1.5;
   color: #999;
   position: relative;
+}
+.slider-form h3 .yourphone {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: rgb(80, 80, 80);
 }
 
 .slider-form h3 .balapa {
@@ -556,6 +562,9 @@ label.radio .emot .mouth.sad {
 
 .invisible {
   visibility: hidden;
+  height: 0px;
+  margin: none;
+  padding: none;
 }
 
 /*
