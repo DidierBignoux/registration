@@ -1,70 +1,86 @@
-var $firstButton = $(".first"),
-  $secondButton = $(".second"),
-  $input = $("input"),
-  $name = $("#name"),
-  $phone = $("#phone"),
-  $age = $("#age"),
-  $team = $("#team"),
-  $more = $(".more"),
-  $yourname = $(".yourname"),
-  $yourphone = $(".yourphone"),
-  $modifyBtn = $("#modify-btn");
-($reset = $(".reset")), ($ctr = $(".container"));
+var current_fs, next_fs, previous_fs;
+var left, opacity, scale;
+var animating;
 
-var $nameValidation = $("#name-valid"),
-  $phoneValidation = $("#phone-valid"),
-  $ageValidation = $("#age-valid"),
-  $teamValidation = $("#team-valid");
+$(".next").click(function () {
+  let $name = $("#name"),
+    $phone = $("#phone"),
+    $chekbox = $("#checkbox"),
+    $yourname = $(".yourname"),
+    $yourphone = $(".yourphone");
 
-$firstButton.on("click", function (e) {
-  if ($name.val().length >= 1 && $phone.val().length >= 1 && $phone.val().length <= 8) {
-    console.log("pass");
-    $(this)
-      .text("Saving...")
-      .delay(900)
-      .queue(function () {
-        $ctr.addClass("center slider-two-active").removeClass("full slider-one-active");
-      });
+  if ($name.val().length >= 1 && $phone.val().length >= 1 && $phone.val().length <= 8 && $chekbox.is(":checked")) {
+    if (animating) return false;
+    animating = true;
+
+    current_fs = $(this).parent();
+    next_fs = $(this).parent().next();
+    $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+    next_fs.show();
+    current_fs.animate(
+      { opacity: 0 },
+      {
+        step: function (now, mx) {
+          scale = 1 - (1 - now) * 0.2;
+          left = now * 50 + "%";
+          opacity = 1 - now;
+          current_fs.css({
+            transform: "scale(" + scale + ")",
+            position: "absolute",
+          });
+          next_fs.css({ left: left, opacity: opacity });
+        },
+        duration: 800,
+        complete: function () {
+          current_fs.hide();
+          animating = false;
+        },
+        easing: "easeInOutBack",
+      }
+    );
+
+    $name = $name.val();
+    $phone = $phone.val();
+    $yourname.html($name + " !");
+    $yourphone.html($phone);
   } else {
     console.log("fail");
     alert("fail");
   }
-
-  e.preventDefault();
 });
 
-$secondButton.on("click", function (e) {
-  $(this)
-    .text("Saving...")
-    .delay(900)
-    .queue(function () {
-      $ctr.addClass("full slider-three-active").removeClass("center slider-two-active slider-one-active");
-      $name = $name.val();
-      $phone = $phone.val();
-      $age = $age.val();
-      $team = $team.val();
-      $nameValidation.val($name);
-      $phoneValidation.val($phone);
-      $ageValidation.val($age);
-      $teamValidation.val($team);
+$(".previous").click(function () {
+  if (animating) return false;
+  animating = true;
 
-      $yourname.html($name + " !");
-      $yourphone.html($phone + " !");
+  current_fs = $(this).parent();
+  previous_fs = $(this).parent().prev();
+  $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
 
-      if ($name == "") {
-        $yourname.html("Anonymous!");
-      } else {
-      }
-    });
-  e.preventDefault();
+  previous_fs.show();
+  current_fs.animate(
+    { opacity: 0 },
+    {
+      step: function (now, mx) {
+        scale = 0.8 + (1 - now) * 0.2;
+        left = (1 - now) * 50 + "%";
+        opacity = 1 - now;
+        current_fs.css({ left: left });
+        previous_fs.css({
+          transform: "scale(" + scale + ")",
+          opacity: opacity,
+        });
+      },
+      duration: 800,
+      complete: function () {
+        current_fs.hide();
+        animating = false;
+      },
+      easing: "easeInOutBack",
+    }
+  );
 });
 
-$modifyBtn.on("click", function (e) {
-  $(this)
-    .text("Canceling...")
-    .delay(900)
-    .queue(function () {
-      location.reload();
-    });
-  e.preventDefault();
+$(".submit").click(function () {
+  return false;
 });

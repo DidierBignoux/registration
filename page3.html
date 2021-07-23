@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <div class="container slider-one-active">
+      <a href="https://didierbignoux.com/"> <img src="" alt="logo" class="logo-img" /> </a>
+      <div class="steps">
+        <div class="step step-one">
+          <div class="liner"></div>
+          <span>Participant</span>
+        </div>
+        <div class="step step-two">
+          <div class="liner"></div>
+          <span>Player Team</span>
+        </div>
+        <div class="step step-three">
+          <div class="liner"></div>
+          <span>Validation</span>
+        </div>
+      </div>
+      <div class="line">
+        <div class="dot-move"></div>
+        <div class="dot zero"></div>
+        <div class="dot center"></div>
+        <div class="dot full"></div>
+      </div>
+      <div class="slider-ctr">
+        <div class="slider">
+          <form class="slider-form slider-one">
+            <h2>Please provide us your information</h2>
+            <label class="input">
+              <input type="text" id="name" placeholder="What's your name?" />
+            </label>
+            <label class="input">
+              <input type="tel" id="phone" placeholder="Your phone number ?" pattern="[0-9]{8}" required />
+            </label>
+            <label class="input">
+              <input type="number" id="age" placeholder="Your age ?*" min="13" />
+            </label>
+            <p>* Age limit is 13 years old.</p>
+            <button class="first next">Save</button>
+          </form>
+          <form class="slider-form slider-two">
+            <h2>Please Choose team</h2>
+            <p>Team can be change bla bla..</p>
+
+            <label class="input">
+              <input type="text" id="team" placeholder="Ex. Liverpool F.C" />
+            </label>
+
+            <button class="second next">Save</button>
+          </form>
+          <div class="slider-form slider-three">
+            <h2>Hello, <span class="yourname"></span></h2>
+            <h3>Thank you for your informations ! <i class="far fa-smile-wink fa-1x"></i></h3>
+            <h3>
+              An SMS will be send to <span class="yourphone"></span>
+              to confirm your resigration.
+            </h3>
+
+            <form name="test-app" method="POST" data-netlify="true">
+              <p class="invisible">
+                <label>Your Name: <input type="text" id="name-valid" name="name" /></label>
+              </p>
+
+              <p class="invisible">
+                <label>Phone number: <input type="tel" id="phone-valid" name="phone" /> </label>
+              </p>
+
+              <p class="invisible">
+                <label>age: <input type="number" id="age-valid" name="age" /> </label>
+              </p>
+
+              <p class="invisible">
+                <label>Team: <textarea name="Team" id="team-valid" name="message"></textarea></label>
+              </p>
+              <p>
+                <button id="modify-btn">Cancel</button>
+                <button type="submit">Register</button>
+              </p>
+            </form>
+            <!-- <a class="reset" href="https://codepen.io/balapa/pen/XbXVRg" target="_blank">Reset</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add your site or application content here -->
+
+    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+      window.ga = function () {
+        ga.q.push(arguments);
+      };
+      ga.q = [];
+      ga.l = +new Date();
+      ga("create", "UA-XXXXX-Y", "auto");
+      ga("set", "anonymizeIp", true);
+      ga("set", "transport", "beacon");
+      ga("send", "pageview");
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
+  </body>
+</html>
