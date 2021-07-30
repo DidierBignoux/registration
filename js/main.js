@@ -5,9 +5,11 @@ var animating;
 $(".next").click(function () {
   let $name = $("#name"),
     $phone = $("#phone"),
+    $team = $("#team"),
     $chekbox = $("#checkbox"),
     $yourname = $(".yourname"),
     $yourphone = $(".yourphone");
+  $yourteam = $(".yourteam");
 
   if ($name.val().length >= 1 && $phone.val().length >= 1 && $phone.val().length <= 8 && $chekbox.is(":checked")) {
     if (animating) return false;
@@ -41,8 +43,14 @@ $(".next").click(function () {
 
     $name = $name.val();
     $phone = $phone.val();
+    $team = $team.val();
     $yourname.html($name + " !");
     $yourphone.html($phone);
+    if ($team.length === 0) {
+      $yourteam.html("No team chosen !");
+    } else {
+      $yourteam.html($team);
+    }
   } else {
     console.log("fail");
     alert("Please insert a valid phone number or verify your age");

@@ -67,10 +67,9 @@ body {
 #multistepsform .action-button,
 button,
 [type="button"],
-[type="reset"],
 [type="submit"] {
   width: 100px;
-  background: #276fbf;
+  /* background: #276fbf; */
   font-weight: bold;
   color: #fff;
   transition: 150ms;
@@ -80,6 +79,22 @@ button,
   padding: 10px 5px;
   margin: 10px 5px;
   /* box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4); */
+}
+#multistepsform .action-button.next {
+  background: #276fbf !important;
+}
+#multistepsform .action-button.previous {
+  color: #276fbf;
+  background-color: transparent !important;
+  border-radius: 0.3em;
+  border: 1px solid #276fbf;
+}
+#multistepsform .action-button.previous:hover {
+  color: #505050;
+}
+
+button.submit {
+  background: #27bf70 !important;
 }
 
 /*** custom checkboxes ***/
@@ -125,10 +140,12 @@ input[type="checkbox"]:checked + label:before {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   margin-bottom: 25px;
-  color: #333;
+  color: rgb(39 40 39);
   position: relative;
 }
-#multistepsform .fs-title .yourname {
+#multistepsform .fs-title .yourname,
+#multistepsform .fs-title .yourphone,
+#multistepsform .fs-title .yourteam {
   font-weight: 700;
 }
 
@@ -171,7 +188,7 @@ input[type="checkbox"]:checked + label:before {
   display: block;
   font-size: 10px;
   color: #fff;
-  background: #999;
+  background: rgb(39 40 39);
   border-radius: 3px;
   margin: 0 auto 5px auto;
 }
@@ -179,7 +196,7 @@ input[type="checkbox"]:checked + label:before {
   content: "";
   width: 100%;
   height: 2px;
-  background: #999;
+  background: rgb(39 40 39);
   position: absolute;
   left: -50%;
   top: 9px;

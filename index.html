@@ -28,7 +28,7 @@
   <body>
     <!-- multistep form -->
     <form id="multistepsform" name="test-app" method="POST" data-netlify="true">
-      <a href="https://didierbignoux.com/"> <img src="img/fifa-icon_6020afea8f7b8.png" alt="logo" class="logo-img" /> </a>
+      <a href="https://didierbignoux.com/Fifa20-Gaming-Events" target="_blank"> <img src="img/logo_Black.png" alt="logo" class="logo-img" /> </a>
       <!-- progressbar -->
       <ul id="progressbar">
         <li class="active">Participant Setup</li>
@@ -47,29 +47,31 @@
         </label>
         <div class="checkbox-div">
           <input id="checkbox" type="checkbox" />
-          <label for="checkbox">Above 13 years old</label>
+          <label for="checkbox">Above 11 years old</label>
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
 
       <fieldset>
-        <h2 class="fs-title">What's your Fifa team ?</h2>
+        <h2 class="fs-title">Play With Favorite International Club Team</h2>
         <h3 class="fs-subtitle"></h3>
         <label class="input">
           <input type="text" id="team" name="message" placeholder="Ex. Liverpool F.C" />
         </label>
-        <p class="fs-desc">All-Star Teams or International teams are prohibited</p>
+        <p class="fs-desc">All-Star Teams or National teams are prohibited</p>
         <input type="button" name="previous" class="previous action-button" value="Previous" />
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
       <fieldset>
-        <h2 class="fs-title">Hello, <span class="yourname"></span></h2>
-        <h3 class="fs-subtitle">Thank you for your informations ! <i class="far fa-smile-wink fa-1x"></i></h3>
-        <h3 class="fs-subtitle">We will send you a SMS to <span class="yourphone">xxxxxx</span> to confirm your resigration</h3>
+        <h3 class="fs-title">Name: <span class="yourname"></span></h3>
+        <h3 class="fs-title">Phone Number: <span class="yourphone"></span></h3>
+        <h3 class="fs-title">Favorite Team: <span class="yourteam">Not Choosen Yet</span></h3>
 
-        <input type="button" name="previous" class="previous action-button" value="Previous" />
+        <h3 class="fs-subtitle">Click on Register to validate your information</h3>
+
+        <input type="button" name="previous" class="previous action-button" value="Modifiy" />
         <!-- <input type="submit" name="submit" class="submit action-button" value="Submit" /> -->
-        <button type="submit">Register</button>
+        <button class="submit" type="submit">Register</button>
       </fieldset>
     </form>
 
